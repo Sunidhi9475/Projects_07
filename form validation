@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sub() {
+  var text = document.getElementById("c4");
+  text.style.display = "block";
+}
+    </script>
+    <style>
+        .form{
+
+             /* display: flex;
+            align-items: center;
+            justify-content: center;  */
+            background-color:bisque;
+            height:300px;
+            width: 600px;
+            border: 2px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: auto;
+        }
+        .sub
+        {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+          
+        }
+
+
+    </style>
+    <h2>HTML/CSS Form</h2>
+</head>
+<body>
+    <form class="form"> &nbsp;
+<label for="Firstname"> <strong> First name: </strong></label> &nbsp;
+    <input type="text" id="Firstname" name="fname" value="Sunidhi"> &nbsp;<br>
+    &nbsp;
+    <label for="lasttname"><strong> Last name: </strong></label> &nbsp;
+    <input type="text" id="Lasttname" name="lname" value="Yaligar"> <br><hr> &nbsp;
+
+   
+    <label><strong> Gender:</strong></label><br>
+    <input type="radio" id="F" name="gender" value="f"> &nbsp;
+    <label> Female </label> <br>
+    
+    <input type="radio" id="m" name="gender" value="mm" >   &nbsp;
+    <label> Male</label> <br><hr> &nbsp;
+
+    <input type="email" placeholder="email" required><br>
+    <label> <strong>Select your courses:</strong></label><br> 
+    <input type="checkbox" id="c1" name="c1" value="WT" onclick="displayText()" >  &nbsp;
+    <label> Web Technologies</label> <br>
+
+
+    <input type="checkbox" id="c2" name="c2" value="c2" onclick="displayText()" >  &nbsp;
+    <label> Software Engineering</label> <br>
+
+
+    <input type="checkbox" id="c3" name="c3" value="c3" onclick="displayText()" > &nbsp;
+    <label> Computer Networks1</label> <br>
+
+    <input type="checkbox" id="c4" name="c4" value="c4" onclick="displayText()">  &nbsp;
+    <label> System Software</label> <hr> &nbsp;
+
+    <div class="sub">
+    <input type="submit" value="submit" id="s" style="align-items: center; color: green;" onclick="sub"><br>
+</div>
+    </form>
+  
+</body>
+</html>
