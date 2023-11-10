@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>DOM manipulation</title>
+	<style>
+	#lang
+	{ 
+	background-color:#FAD7A0;
+	margin-top:50px;
+	margin-left:70px;
+	padding:30px;
+	}
+	*{
+	
+	font-family:"Garamond";
+	}
+	</style>
+</head>
+ <body>
+ <h3>Courses offered in this semester</h3>
+ 
+<table id="lang">
+    <tr>
+        <td><input id="HTML" type="checkbox" value="HTML"/><label for="Html">HTML</label></td>
+    </tr>
+    <tr>
+        <td><input id="CSS" type="checkbox" value="CSS"/><label for="CSS">CSS</label></td>
+    </tr>
+    <tr>
+        <td><input id="Javascript" type="checkbox" value="Javascript"/><label for="Javascript">Javascript</label></td>
+    </tr>
+    <tr>
+        <td><input id="Node" type="checkbox" value="Node"/><label for="Node">Node</label></td>
+    </tr>
+    <tr>
+        <td><input id="Angular" type="checkbox" value="Angular"/><label for="Angular">Angular</label></td>
+    </tr>
+</table>
+<br />
+
+
+<p id="display"></p>
+
+
+<form>
+<h3>Select one slot for registration of courses</h3>
+<input type="radio" value="Slot1" name="Slot" id="radiobt">Slot1</input>
+<input type="radio" value="Slot2" name="Slot" id="radiobt1">Slot2</input>
+
+<p id="selectedslot">The slot selected is</p>
+<input type = "button" value = "Show" onclick = "GetSelected()" />
+</form>
+
+<script type="text/javascript">
+
+
+    function GetSelected() {
+        //Create an Array.
+        var langSelected = new Array();
+  
+        //Reference the Table.
+        var lang = document.getElementById("lang");
+ 
+        //Reference all the CheckBoxes in Table.
+        var chks = lang.getElementsByTagName("INPUT");
+ 
+        // Loop and push the checked CheckBox value in Array.
+        for (var i = 0; i < chks.length; i++) {
+            if (chks[i].checked) {
+                langSelected.push(chks[i].value);
+            }
+        }
+ 
+        //Display the selected CheckBox values.
+        if (langSelected.length > 0) {
+            alert("Selected values: " + langSelected.join(","));
+			document.getElementById("display").innerHTML= "The languages selected are:"+langSelected;
+			document.getElementById("display").style.color="Violet"
+        }
+		else
+		{
+		document.getElementById("display").innerHTML= "NO languages are selected by user";
+		}
+		
+		
+		var radioele=document.getElementsByName("Slot");
+	    for(i = 0; i < radioele.length; i++) {
+                if(radioele[i].checked)
+                document.getElementById("selectedslot").innerHTML
+                        = "The selected slot is "+radioele[i].value;
+          }
+        
+    };
+	
+
+</script>
+</body>
+</html>
